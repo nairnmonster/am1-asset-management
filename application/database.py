@@ -1,9 +1,10 @@
+import os
 import psycopg2
 
 
 def get_connection():
     return psycopg2.connect(
-        host="localhost",
+        host=os.getenv("DB_HOST", "localhost"),
         database="asset_management",
         user="assetadmin",
         password="AssetPass123!"
