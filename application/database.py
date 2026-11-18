@@ -5,11 +5,10 @@ import psycopg2
 def get_connection():
     return psycopg2.connect(
         host=os.getenv("DB_HOST", "localhost"),
-        database="asset_management",
-        user="assetadmin",
-        password="AssetPass123!"
+        database=os.getenv("DB_NAME", "asset_management"),
+        user=os.getenv("DB_USER", "assetadmin"),
+        password=os.getenv("DB_PASSWORD")
     )
-
 
 def add_asset(asset_name, asset_type, serial_number, assigned_user, status):
     conn = get_connection()
