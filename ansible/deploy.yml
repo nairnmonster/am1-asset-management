@@ -1,0 +1,24 @@
+---
+- name: AM1 Configuration
+  hosts: aws
+  become: yes
+
+  tasks:
+
+    - name: Ensure Docker is installed
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Ensure Grafana is running
+      service:
+        name: grafana-server
+        state: started
+        enabled: yes
+
+    - name: Ensure PostgreSQL is running
+      service:
+        name: postgresql
+        state: started
+        enabled: yes
