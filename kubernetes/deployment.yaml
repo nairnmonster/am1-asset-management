@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: am1-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: am1-app
+  template:
+    metadata:
+      labels:
+        app: am1-app
+    spec:
+      containers:
+      - name: am1-app
+        image: nairnmonster/am1-asset-management:v1
+        ports:
+        - containerPort: 5000
