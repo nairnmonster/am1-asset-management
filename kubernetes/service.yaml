@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: am1-service
+spec:
+  selector:
+    app: am1-app
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: NodePort

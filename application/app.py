@@ -18,7 +18,7 @@ def home():
     assets = get_assets()
 
     page = """
-    <h1>Asset Management System</h1>
+    <h1>Asset Management System - Deployment Test</h1>
 
     <p>
         <a href="/add">Add Asset</a> |
